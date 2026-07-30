@@ -99,6 +99,8 @@
             <button id="submit" type="submit">Submit</button>
           </div>
         </form>
+        <h3>Form Submit Button Using Prompt</h3>
+        <button onclick="formPrompt()" id="formPrompt">Form Submit</button>
       </div>
 
       <h3>
@@ -156,6 +158,7 @@
       }
 
       /* ======== Form Script ======== */
+      //Label and input model
       document
         .getElementById("myForm")
         .addEventListener("submit", function (event) {
@@ -171,6 +174,15 @@
           console.log("Email : ", email);
           console.log("Age : ", age);
         });
+
+      //Prompt modal
+      function formPrompt() {
+        let name1 = prompt("Enter Your Name");
+        let course1 = prompt("enter your course");
+        let age1 = parseInt(prompt("Enter your age"));
+
+        alert("Name : " + name1 + "\nCourse : " + course1 + "\nAge : " + age1);
+      }
 
       /* ===== Q4 Multible Buttons ====== */
       function textSize() {
