@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JS - Task2</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 20px;
+      }
+
+      h1 {
+        text-align: center;
+        color: #333;
+      }
+
+      .container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      button {
+        display: block;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        font-size: 16px;
+        cursor: pointer;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 4px;
+      }
+
+      button:hover {
+        background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JavaScript Task 2</h1>
+    <div class="container">   
+      <div class="time-greeting">
+        <button id="timeGreeting" onclick="getTimeGreeting()">
+          Get Time Greeting
+        </button>
+      </div>
+
+      <!-- Display greater number from  -->
+      <div class="greater-number">
+        <button id="greaterNumber" onclick="greater(7, 4)">
+          Get Greater Number
+        </button>
+      </div>
+
+      <!-- Display given number is positive or negative -->
+
+      <div class="possitive-negative">
+        <button id="possitiveNegative" onclick="possitiveNegative()">
+          Check Possitive or Negative
+        </button>
+      </div>
+      <div>
+        <!-- Count Positive and Negative numbers from given numbers -->
+          <div class="array-positive-negative">
+            <button id="arrayPositiveNegative" onclick="possitiveNegativeCount()">
+              Count Possitive and Negative Numbers
+            </button>
+      </div>
+       
+   
+
+     <!-- Odd Even Numbers -->
+      <div>
+        <button id="oddEvenNumbers" onclick="oddEvenNumbers()">
+          Check Odd or Even Numbers 
+        </button>
+      </div>
+
+      <!-- Average of students marks on 5 subjects -->
+       <div>
+        <button id="averageMarks" onclick="averageMarks()">
+          Average of Marks 
+        </button>
+       </div>
+    </div>
+    <script>
+      /* 1Q. Take the time from the user using prompt() function in digits - 0 to 23 , based on that entered time , alert whether it is "good morning" or "good afternoon" or "good evening" or "good night" using if else conditionals.*/
+
+      function getTimeGreeting() {
+        let time = prompt("Enter the time in digits (0 to 23):");
+        time = parseInt(time);
+
+        if (time >= 0 && time < 12) {
+          alert("Good morning");
+        } else if (time >= 12 && time < 17) {
+          alert("Good afternoon");
+        } else if (time >= 17 && time < 21) {
+          alert("Good evening");
+        } else if (time >= 21 && time <= 23) {
+          alert("Good night");
+        } else {
+          alert(
+            "Invalid time entered. Please enter a number between 0 and 23.",
+          );
+        }
+      }
+
+     
+
+      /* 2Q)Take two numbers as a function parameter and display which number is greater among them. */
+
+      function greater(n1, n2) {
+        n1 = parseInt(prompt("Enter the first number:"));
+        n2 = parseInt(prompt("Enter the second number:"));
+
+        if (n1 > n2) {
+          alert("First Number is: " + n1 +  "\n\nSecond Number is : " + n2 + "\n\n\n" +n1 + " is greater number");
+          return n1;
+        } else if (n2 > n1) {
+          alert("First Number is: " + n1 +  "\n\nSecond Number is : " + n2 + "\n\n\n" +n2 + " is greater number");
+          return n2;
+        }
+      }
+
+      /* 3Q) Write a program that determines whether a given number is positive or negative.  */
+
+      function possitiveNegative() {
+        let number = parseInt(prompt("Enter a Number:"));
+        if (number > 0) {
+          alert(`${number} is a possitive number`);
+        } else if (number < 0) {
+          alert(` ${number} is a negative number`);
+        } else {
+          alert(`${number} is Zero`);
+        }
+      }
+
+      /* 4Q) Take some numbers into an array and display how many numbers are positive in it and how many numbers are negative in it. */
+
+      function possitiveNegativeCount() {
+        let arry = []; //empty array to store numbers
+        let size = parseInt(prompt("Enter numbers:")); //take array size
+        alert(`Next Enter possitive and negative ${size} numbers one by one `);
+
+        // take array elements from the user
+        for (let i = 0; i < size; i++) {
+          arry[i] = parseInt(prompt("Enter a number:" + (i + 1)));
+        }
+
+        let countPositive = 0;
+        let countNegative = 0;
+        //Check the element
+        for (let i = 0; i < arry.length; i++) {
+          if (arry[i] > 0) {
+            countPositive++;
+          } else if (arry[i] < 0) {
+            countNegative++;
+          }
+        }
+        alert(
+          "Entered Numbers:" +
+            arry +
+            "\n\nPositive Numbers: " +
+            countPositive +
+            "\n\n Negative Numbers: " +
+            countNegative,
+        );
+      }
+
+      /* 5Q)Write a Javascript for loop that iterates  from 0 to 15.For each iteration, it checks if the current number is odd or even, and displays a message on the screen. */
+
+      function oddEvenNumbers() {
+        let number = parseInt(prompt("Enter a number:"));
+        
+        if (number % 2 === 0) {
+            console.log(number + " is Even Number");
+          } else {
+            console.log(number + " is Odd Number");
+          }
+        alert("Entered Number is: " + number + "\n\nnumber is: " + (number % 2 === 0 ? "Even" : "Odd"));
+
+        console.log("");
+        console.log("Iterating from 0 to 15 and checking odd/even numbers:");
+
+        for (let i = 0; i < 15; i++) {
+          if (i % 2 === 0) {
+            console.log(i + " is Even Number");
+          } else {
+            console.log(i + " is Odd Number");
+          }
+        }
+      }
+
+      /* 6Q)Take marks of 5 students as an input from user or take them as a function parameters and calculate the average of those marks and display the average onto the screen. */
+      function averageMarks() {
+        let stud1 = parseInt(prompt("Enter marks of Student 1:"));
+        let stud2 = parseInt(prompt("Enter marks of Student 2:"));  
+        let stud3 = parseInt(prompt("Enter marks of Student 3:"));
+        let stud4 = parseInt(prompt("Enter marks of Student 4:"));
+        let stud5 = parseInt(prompt("Enter marks of Student 5:"));
+
+        let average = (stud1 + stud2 + stud3 + stud4 + stud5) / 5;
+          alert(`Student 1 Marks: ${stud1}\nStudent 2 Marks: ${stud2}\nStudent 3 Marks: ${stud3}\nStudent 4 Marks: ${stud4}\nStudent 5 Marks: ${stud5}
+        \n\nAverage Marks: ${average}`);  
+      }
+
+    </script>
+  </body>
+</html>
