@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Fibonacci-Palindrome-Clock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <h1>Task3 - Fibonacci-Palindrome-Clock</h1>
+    <!-- 1Q) Write a Javascript program to get the first n fibonacci numbers using recursion . The value 'n' you can take from user(dynamically). -->
+
+    <section class="task">
+      <h2>1. Fibonacci Series Using Recursion</h2>
+      <label for="num"> Enter number of Fibonacci terms: </label>
+      <input type="number" id="num" min="1" placeholder="Enter umber " />
+      <button onclick="displayFibonacci()">Generate</button>
+      <p id="fibonacciResult">Result:</p>
+    </section>
+    <section class="task">
+      <h2>2.0 Palindrome using Reverse method</h2>
+      <label for="text"></label>
+      <input
+        type="text"
+        id="text"
+        name="text"
+        placeholder="Enter any text"
+        required
+      />
+      <button onclick="palindrome()">Check Palindrome or Not</button>
+      <p id="palindomeResult">Result:</p>
+    </section>
+
+    <!-- 2Q - Write a Javascript program to check whether a given string is palindrome or not using recursion. Can take input from user using prompt. -->
+
+    <section class="task">
+      <h2>2. Palindrome Using Recursion</h2>
+      <button onclick="palindromeUsingPrompt()">Check Palindrome</button>
+    </section>
+
+    <!-- 3Q - Creating a Clock using javascript setInterval() function.  -->
+    <section class="task">
+      <h2>3. Digital Clock Using setInterval()</h2>
+      <div id="clock">00:00:00</div>
+    </section>
+
+    <!-- 4Q - By using DOM methods manipulate the browser document elements and implement the 2Q as shown in the attached image .Take input from user using input box. -->
+    <section class="task">
+      <h2>4. Palindrome Using DOM</h2>
+      <label for="palindromeDOM"> Enter a string: </label>
+      <input type="text" id="palindromeDOM" placeholder="Enter string" />
+      <button onclick="checkPalindromeDOM()">Check</button>
+      <p id="palindromeResult">Result</p>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
