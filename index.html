@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock-Paper-Scissor</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <p id="displaypara">RockPaperScissor Game</p>
+
+      <div class="imagecontainer">
+        <img src="rock.avif" id="rock" alt="Rock" />
+        <img src="paper1.avif" id="paper" alt="Paper" />
+        <img src="scissor2.avif" id="scissor" alt="Scissor" />
+      </div>
+      <div class="displaybox">
+        <div>
+          <p id="round">Round:<span id="turns"> 0/10</span></p>
+        </div>
+        <div class="leftdiv">
+          <h4>User Scoring</h4>
+          <p>Score: <span id="userscore">0</span></p>
+        </div>
+        <div class="rightdiv">
+          <h4>Computer Scoring</h4>
+          <p>Score: <span id="compscore">0</span></p>
+        </div>
+      </div>
+      <div class="result">
+        <button id="btn"><span>Result</span></button>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
