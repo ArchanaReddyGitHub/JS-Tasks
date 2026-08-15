@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator DOM</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      h2 {
+        color: blueviolet;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        margin-top: 50px;
+        margin-bottom: 0;
+      }
+      .table {
+        width: 40%;
+        align-items: center;
+      }
+      div {
+        margin: 20px 800px;
+        display: inline-block;
+        justify-content: center;
+        border: 1px solid red;
+        padding: 10px 20px;
+      }
+      button {
+        width: 100%;
+        height: 60px;
+        padding: 10px 20px;
+        background-color: rgb(38, 186, 38);
+        color: white;
+        font-weight: bolder;
+        font-size: 30px;
+      }
+      input {
+        padding: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>Calculator</h2>
+    <div>
+      <table class="table">
+        <tr>
+          <td colspan="3"><input type="text" id="inputbox" /></td>
+          <td><button value="C" onclick="empty()">C</button></td>
+        </tr>
+        <tr>
+          <td><button value="1" onclick="clickbuttonfunc(1)">1</button></td>
+          <td><button value="2" onclick="clickbuttonfunc(2)">2</button></td>
+          <td><button value="3" onclick="clickbuttonfunc(3)">3</button></td>
+          <td><button value="/" onclick="clickbuttonfunc('/')">/</button></td>
+        </tr>
+        <tr>
+          <td><button value="4" onclick="clickbuttonfunc(4)">4</button></td>
+          <td><button value="5" onclick="clickbuttonfunc(5)">5</button></td>
+          <td><button value="6" onclick="clickbuttonfunc(6)">6</button></td>
+          <td><button value="*" onclick="clickbuttonfunc('*')">*</button></td>
+        </tr>
+        <tr>
+          <td><button value="7" onclick="clickbuttonfunc(7)">7</button></td>
+          <td><button value="8" onclick="clickbuttonfunc(8)">8</button></td>
+          <td><button value="9" onclick="clickbuttonfunc(9)">9</button></td>
+          <td><button value="-" onclick="clickbuttonfunc('-')">-</button></td>
+        </tr>
+        <tr>
+          <td><button value="0" onclick="clickbuttonfunc(0)">0</button></td>
+          <td><button value="." onclick="clickbuttonfunc('.')">.</button></td>
+          <td><button value="=" onclick="calc()">=</button></td>
+          <td><button value="+" onclick="clickbuttonfunc('+')">+</button></td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      function clickbuttonfunc(val) {
+        console.log("clickbuttonfunc");
+        document.getElementById("inputbox").value += val;
+      }
+      function calc() {
+        let var1 = document.getElementById("inputbox").value;
+        let var2 = eval(var1);
+        document.getElementById("inputbox").value = var2;
+      }
+      function empty() {
+        document.getElementById("inputbox").value = "";
+      }
+    </script>
+  </body>
+</html>
