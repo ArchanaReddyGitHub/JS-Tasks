@@ -18,23 +18,34 @@ body {
   box-shadow: 0 0 10px rgb(203, 189, 217);
 }
 #displaypara {
+  color: navy;
+  display: flex;
+  justify-content: center;
+  font-size: 30px;
+  font-weight: bold;
+  margin: 40px;
+}
+#selection {
   display: flex;
   justify-content: center;
   background-color: rgb(233, 222, 141);
   transition: 0.5s ease-in-out;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   margin: 40px;
   color: navy;
 }
-#displaypara:hover {
+#selection:hover {
   transform: scale(90%);
 }
 .uchoice,
 .cchoice {
-  font-size: 20px;
+  font-size: 25px;
   font-weight: bold;
   color: orangered;
+}
+.winner {
+  color: green;
 }
 .imagecontainer {
   display: flex;
@@ -68,7 +79,9 @@ body {
 #turns {
   color: navy;
 }
-.leftdiv {
+.leftdiv,
+.rightdiv,
+.center {
   font-size: 20px;
   padding: 10px;
 }
@@ -77,10 +90,10 @@ body {
   justify-content: center;
   margin-top: 30px;
 }
-.rightdiv {
+/* .rightdiv {
   font-size: 20px;
   padding: 10px;
-}
+} */
 .result button {
   width: 80%;
   padding: 4px;
@@ -89,13 +102,14 @@ body {
   transition: 0.5s ease-in-out;
   font-size: 20px;
   font-weight: bold;
-  color: navy;
+  color: green;
 }
 .result button:hover {
   transform: scale(90%);
 }
 #userscore,
-#compscore {
+#compscore,
+#draw {
   font-weight: bold;
   color: navy;
 }
