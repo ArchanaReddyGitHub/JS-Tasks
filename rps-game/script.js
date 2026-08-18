@@ -2,6 +2,9 @@ let Allimg = document.querySelectorAll(".imagecontainer img");
 console.log(Allimg);
 let userchoice;
 let compchoice;
+
+// Score
+let drawScore = 0;
 let userScore = 0;
 let compScore = 0;
 let roundCount = 0;
@@ -20,32 +23,26 @@ function gameImplementation(uchoice) {
   roundCount++;
 
   cchoice = compchoicefun();
-  document.getElementById("displaypara").innerHTML =
+  document.getElementById("selection").innerHTML =
     `User selected:  <span class="uchoice">   ${uchoice} </span> and Computer selected:   <span class="cchoice  "> ${cchoice}</span>`;
 
   if (cchoice === uchoice) {
     document.getElementById("btn").innerHTML = "Draw";
-  } else if (cchoice === "rock" && uchoice === "scissor") {
+    drawScore++;
+    document.getElementById("draw").innerHTML = drawScore;
+  }  else if (
+    (cchoice === "rock" && uchoice === "scissor") ||
+    (cchoice === "paper" && uchoice === "rock") ||
+    (cchoice === "scissor" && uchoice === "paper")
+  ) {
     document.getElementById("btn").innerHTML = "Computer Won";
     compScore++;
     document.getElementById("compscore").innerHTML = compScore;
-  } else if (cchoice === "paper" && uchoice === "rock") {
-    document.getElementById("btn").innerHTML = "Computer Won";
-    compScore++;
-    document.getElementById("compscore").innerHTML = compScore;
-  } else if (cchoice === "scissor" && uchoice === "paper") {
-    document.getElementById("btn").innerHTML = "Computer Won";
-    compScore++;
-    document.getElementById("compscore").innerHTML = compScore;
-  } else if (cchoice === "rock" && uchoice === "paper") {
-    document.getElementById("btn").innerHTML = "User Won";
-    userscore++;
-    document.getElementById("userscore").innerHTML = userScore;
-  } else if (cchoice === "paper" && uchoice === "scissor") {
-    document.getElementById("btn").innerHTML = "User Won";
-    userScore++;
-    document.getElementById("userscore").innerHTML = userScore;
-  } else if (cchoice === "scissor" && uchoice === "rock") {
+  } else if (
+    (cchoice === "rock" && uchoice === "paper") ||
+    (cchoice === "paper" && uchoice === "scissor") ||
+    (cchoice === "scissor" && uchoice === "rock")
+  ) {
     document.getElementById("btn").innerHTML = "User Won";
     userScore++;
     document.getElementById("userscore").innerHTML = userScore;
@@ -62,7 +59,7 @@ function gameImplementation(uchoice) {
     } else {
       winner = "Game Draw!";
     }
-    document.getElementById("btn").innerHTML = `Final winner: ${winner}`;
+    document.getElementById("btn").innerHTML = ` ${winner}`;
   }
   document.getElementById("round").innerText = `Round: ${roundCount} / 10`;
 }
